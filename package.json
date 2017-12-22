@@ -1,0 +1,24 @@
+{
+  "name": "logistic",
+  "version": "1.0.0",
+  "description": "物流网站",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ljtang2009@github.com/ljtang2009/logistic.git"
+  },
+  "keywords": [
+    "logistic",
+    "vue",
+    "webpack"
+  ],
+  "author": "ho_ho_gl@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljtang2009/logistic/issues"
+  },
+  "homepage": "https://github.com/ljtang2009/logistic#readme"
+}
