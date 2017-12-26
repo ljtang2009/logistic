@@ -8,7 +8,8 @@ module.exports = {
             NODE_ENV: '"production"'
         },
         indexDeskTop: path.resolve(__dirname, '../release/index.html'),
-        indexMobile: path.resolve(__dirname, '../release/index-mobile.html'),
+        achievementDeskTop: path.resolve(__dirname, '../release/achievement.html'),
+        indexMobile: path.resolve(__dirname, '../release/mobile.html'),
         assetsRoot: path.resolve(__dirname, '../release'),
         assetsSubDirectory: 'static',
         assetsPublicPath: './', //本地build

@@ -4,7 +4,9 @@
   "description": "物流网站",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev-server.js"
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "dll": "webpack --config build/webpack.dll.conf.js | node build/build.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/ljtang2009/logistic#readme",
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^2.1.2",
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
@@ -29,6 +32,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
+    "compression-webpack-plugin": "^1.1.3",
+    "css-loader": "^0.28.7",
     "eslint": "^4.13.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
@@ -37,15 +42,26 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
+    "fastclick": "^1.0.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "less-loader": "^4.0.5",
+    "ora": "^1.3.0",
+    "os": "^0.1.1",
+    "shelljs": "^0.7.8",
     "url-loader": "^0.6.2",
     "vue": "^2.5.13",
     "vue-loader": "^13.6.1",
     "vue-template-compiler": "^2.5.13",
+    "vux-loader": "^1.1.29",
     "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^2.0.2",
     "webpack-hot-middleware": "^2.21.0",
-    "webpack-merge": "^4.1.1"
+    "webpack-merge": "^4.1.1",
+    "webpack-uglify-parallel": "^0.1.4"
+  },
+  "dependencies": {
+    "vux": "^2.7.5"
   }
 }

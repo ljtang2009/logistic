@@ -1,5 +1,5 @@
 <template>
     <div>
-        桌面首页
+        业绩展示
     </div>
 </template>
