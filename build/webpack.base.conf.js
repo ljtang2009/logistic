@@ -22,9 +22,9 @@ let webpackBaseConfig = {
         alias: {
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
-            '@components': path.resolve(__dirname, '../src/components'),
-            '@modules': path.resolve(__dirname, '../src/modules'),
-            '@constant': path.resolve(__dirname, '../src/constant')
+            // '@components': path.resolve(__dirname, '../src/components'),
+            // '@modules': path.resolve(__dirname, '../src/modules'),
+            // '@constant': path.resolve(__dirname, '../src/constant')
         },
     },
     module: {
