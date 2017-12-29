@@ -10,25 +10,31 @@
                 </transition>
             </div>
             <div>
-                <div class="div-phone" v-if="!littleFlag">
-                    <i class="iconfont icon-phone i-phone"></i> 13111111111
-                </div>
+                <transition name="transition-fade-hight">
+                    <div class="div-phone" v-if="!littleFlag">
+                        <i class="iconfont icon-phone i-phone"></i> 13111111111
+                    </div>
+                </transition>
                 <div class="div-menu">
                     <div class="div-menu-item" :class="{'div-menu-item-selected': menu.selected}" v-for="menu in menus" :key="menu.id" @click="clickMenuItem(menu.id)">{{menu.text}}
                     </div>
                 </div>
             </div>
         </div>
-        <div style="height: 2000px">
-            banner
+        <div class="div-slogan-wapper">
+            <typing-slogan :slogans="slogans"></typing-slogan>
         </div>
     </div>
 </template>
 <script>
     import eventMixin from '../mixins/event'
+    import typingSlogan from './typingSlogan'
 
     export default {
         mixins: [eventMixin],
+        components: {
+            'typing-slogan': typingSlogan
+        },
         props: {
             selectedMenuId: {
                 type: String,
@@ -58,7 +64,13 @@
                 pageYOffset: 0,
                 littleFlag: false,
                 logoImageFlag: true,
-                logoTextFlag: false
+                logoTextFlag: false,
+                slogans: [
+                    '<b>龙啸大件，</b><b class="hightlight-red">纵横天下。</b>',
+                    '<b>通四海，达五洲，</b><b class="hightlight-red">成就所托。</b>',
+                    '<b class="hightlight-red">您的嘱托，</b><b>我必承诺。</b>'
+                ],
+                sloganFlag: true
             }
         },
         watch: {
@@ -91,32 +103,35 @@
                 this.menus = tempMenus
                 // TODO 页面跳转
                 console.log('TODO 页面跳转')
+            },
 
-                this.littleFlag = !this.littleFlag
-            }
         }
     }
 </script>
 <style lang="scss" scoped>
     .div-header-wrapper {
-        background-image: url(/static/img/banner.jpg);
+        background-image: url(/static/assets/banner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .div-header {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
         color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         padding: 2.5rem 1.5rem 1rem 1.5rem;
-        transition: all 1s;
+        transition: all .6s;
         position: fixed;
+        z-index: 10;
         width: calc(100% - 3rem);
     }
 
     .div-header-light {
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(0, 0, 0, 0.9);
         padding-top: 1rem;
     }
 
@@ -166,6 +181,7 @@
         text-align: right;
         padding-right: 1rem;
         font-size: 1.1rem;
+        overflow: hidden;
     }
 
     .i-phone {
@@ -173,25 +189,23 @@
     }
 
     .transition-logo-enter-active, .transition-logo-leave-active {
-        transition: all 1s
+        transition: all .5s
     }
     .transition-logo-enter, .transition-logo-leave-to {
-        opacity: 0
+        opacity: 0;
+        width: 8rem;
+        height: 3.5rem;
     }
 
-    /* .transition-logo-image-enter-active {
-        animation: fade-in .5s;
+    .transition-fade-hight-enter-active, .transition-fade-hight-leave-active {
+        transition: all .5s
     }
-    .transition-logo-image-leave-active {
-        animation: fade-in .5s reverse;
+    .transition-fade-hight-enter, .transition-fade-hight-leave-to {
+        opacity: 0;
+        height: 0;
     }
 
-    @keyframes fade-in {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    } */
+    .div-slogan-wapper{
+        padding: 15rem 0 10rem 0;
+    }
 </style>

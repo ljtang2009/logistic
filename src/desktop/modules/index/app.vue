@@ -1,7 +1,7 @@
 <template>
     <div>
         <page-header selectedMenuId="0"></page-header>
-        桌面首页
+        <div style="height: 2000px;">桌面首页</div>
     </div>
 </template>
 <script>

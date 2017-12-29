@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 body {
     margin: 0;
 }
@@ -30,6 +32,10 @@ button,
 input,
 select {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.hightlight-red {
+    color: $color-red;
 }
 
 @import "icon/iconfont.css"
